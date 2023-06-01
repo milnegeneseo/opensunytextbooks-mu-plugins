@@ -8,7 +8,7 @@ License: GPLv2
  * Functions @author Leah M Root
  *
  */
-//Allow ePub and mobi file type uploads  -- Leah M Root
+//Allow doc, zip, csv, excel, word, word template, xml, ePub and mobi file type uploads  -- Leah M Root
 add_filter('upload_mimes', 'add_custom_mime_types');
 function add_custom_mime_types($mimes)
 {
@@ -17,10 +17,13 @@ function add_custom_mime_types($mimes)
         'zip' => 'application/zip',
         'mobi' => 'application/x-mobipocket-ebook',
         'epub' => 'application/epub+zip',
-		'csv' => 'text/csv',
-		'xla|xls|xlt|xlw' => 'application/vnd.ms-excel',
-		'xml' => 'application/xml',
-		'wxr' => 'application/wxr'
+	'csv' => 'text/csv',
+	'xla|xls|xlt|xlw' => 'application/vnd.ms-excel',
+	'xml' => 'application/xml',
+	'wxr' => 'application/wxr',
+	'doc' => 'application/msword',
+	'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+	'dotx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.template'	    
     );
 
     return array_merge($mimes, $new_file_types);
